@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: hello-php
+    entorno: dev
   name: hello-php
 spec:
   containers:
