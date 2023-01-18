@@ -2,7 +2,7 @@
 docker build -t hello-php:error .
 docker tag hello-php:error tecnocrata/hello-php:error
 docker push tecnocrata/hello-php:error
-kubectl apply -f hello-php-error-pod.yamlkubectl
+kubectl apply -f hello-php-error-pod.yaml
 ```
 
 ### Liveness Probe
