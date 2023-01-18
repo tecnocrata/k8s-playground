@@ -5,7 +5,7 @@ metadata:
   labels:
     run: hello-php
     entorno: dev
-  name: hello-php-with-resources-bad
+  name: hello-php-with-resources-good
 spec:
   containers:
     - image: tecnocrata/hello-php:2.1
@@ -15,10 +15,10 @@ spec:
       resources:
         limits: # maximum resources to take
           cpu: 50m
-          memory: 64G # 32Mi
+          memory: 32Mi # 64G
         requests: # minimun required resources
           cpu: 50m
-          memory: 64G #32Mi
+          memory: 32Mi # 64G
   dnsPolicy: ClusterFirst
   restartPolicy: Never
 status: {}
