@@ -5,7 +5,7 @@ metadata:
   labels:
     run: hello-php
     entorno: dev
-  name: hello-php
+  name: hello-php-healthcheck-error
 spec:
   containers:
     - image: tecnocrata/hello-php:error
