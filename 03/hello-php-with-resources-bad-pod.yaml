@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: hello-php
+    entorno: dev
+  name: hello-php-with-resources
+spec:
+  containers:
+    - image: tecnocrata/hello-php:2.1
+      name: hello-php
+      ports:
+        - containerPort: 80
+      resources:
+        limits: # maximum resources to take
+          cpu: 50m
+          memory: 64G # 32Mi
+        requests: # minimun required resources
+          cpu: 50m
+          memory: 64G #32Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
