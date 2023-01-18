@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels: app:nginx
+spec:
+  containers:
+    - name: my-nginx
+      image: nginx:1.13
+      ports:
+        - containerPort: 8080
+      resources:
+        limits: # maximum resources to take
+          cpu: 50m
+          memory: 32Mi
+        requests: # minimun required resources
+          cpu: 50m
+          memory: 32Mi
+      livenessProbe: # Is it live? if it is not restart pod
+        httpGet:
+          path: /
+          port: http
+      readinessProbe: # Is it ready to receive traffic?
+        httpGet:
+          path: /
+          port: http
