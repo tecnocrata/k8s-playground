@@ -15,3 +15,18 @@ Creating directly the service
 kubectl apply -f hello-php-pod.yaml
 kubectl expose pod/hello-php-for-service --port 80 -o yaml
 ```
+
+Verificar que se pueda comunicar hacia los pods detras del ClusterIP service desde otro pod
+
+Usando un comando como para correr una imagen pero dentro del cluster de kubernetes, parecido a docker run
+
+```
+kubectl run --rm -i --tty my-small-linux --image alpine --restart=Never -- sh
+```
+
+Dentro del contenedor dentro del pod, ejecutamos y obtenemos resultados similares para los dos siguientes comandos:
+
+```
+wget hello-php-for-service/index.php -qSO-
+wget hello-php-for-service -qSO-
+```
