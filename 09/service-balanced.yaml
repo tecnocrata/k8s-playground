@@ -7,6 +7,8 @@ metadata:
     entorno: dev
     run: hello-php
   name: hello-php-balanced
+  annotations:
+    metallb.universe.tf/address-pool: config
 spec:
   ports:
     - port: 80
