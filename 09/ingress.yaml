@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: hello-world
+spec:
+  rules:
+    - host: tecnocrata-k8s.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: hello-php
+                port:
+                  number: 80
+            path: /
+            pathType: Exact
+status:
+  loadBalancer: {}
