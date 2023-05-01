@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hello-php
+  name: hello-php
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-php
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-php
+    spec:
+      containers:
+        - image: tecnocrata/hello-php:2.2
+          name: hello-php
+          ports:
+            - containerPort: 80
+          resources: {}
+status: {}
