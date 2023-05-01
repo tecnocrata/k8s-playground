@@ -1,3 +1,25 @@
+## Installing an ingress-controllebr based on nginx:
+
+```bash
+helm upgrade --install ingress-nginx ingress-nginx \
+--repo https://kubernetes.github.io/ingress-nginx \
+--namespace ingress-nginx --create-namespace
+```
+
+Verify the ingress is running
+
+```
+k get pods -n ingress-nginx
+```
+
+Edit /etc/hosts files to use a unreal domain, adding the next line:
+
+```
+192.168.60.211  tecnocrata-k8s.com
+```
+
+## Using the ingress
+
 We can use a generator to create an ingress object, this way:
 
 ```sh

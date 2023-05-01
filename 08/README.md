@@ -9,3 +9,9 @@ The deployment.yaml contains a docker image reference updated, and update the de
 ```bash
 k apply -f deployment.yaml
 ```
+
+There is another way to update an running deployment using:
+
+```bash
+k apply -f deployment.yaml
+```
