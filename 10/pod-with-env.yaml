@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: hello-php
+    entorno: dev
+    app: my-initial-php-apps # this will group pods under service
+  name: hello-php-for-service
+spec:
+  containers:
+    - image: tecnocrata/hello-php:2.3
+      name: hello-php
+      ports:
+        - containerPort: 80
+          name: app-port
+      resources: {}
+      env:
+        - name: SOME_VARIBLE
+          value: "24"
+        - name: VARIABLE2
+          value: "12345"
+        - name: ERROR_LEVEL
+          value: "-1"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
