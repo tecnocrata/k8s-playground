@@ -15,13 +15,9 @@ spec:
         - containerPort: 80
           name: app-port
       resources: {}
-      env:
-        - name: SOME_VARIBLE
-          value: "24"
-        - name: VARIABLE2
-          value: "12345"
-        - name: ERROR_LEVEL
-          value: "-1"
+      envFrom: # refering my-config configmap
+        - configMapRef:
+            name: my-config
   dnsPolicy: ClusterFirst
   restartPolicy: Never
 status: {}

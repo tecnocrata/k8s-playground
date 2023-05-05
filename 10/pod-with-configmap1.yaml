@@ -6,7 +6,7 @@ metadata:
     run: hello-php
     entorno: dev
     app: my-initial-php-apps # this will group pods under service
-  name: hello-php-for-service
+  name: hello-php
 spec:
   containers:
     - image: tecnocrata/hello-php:2.3
@@ -16,7 +16,7 @@ spec:
           name: app-port
       resources: {}
       env: # refering my-config configmap
-        - name: SOME_VARIBLE
+        - name: SOME_VARIABLE
           valueFrom:
             configMapKeyRef:
               name: my-config
@@ -30,7 +30,7 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: my-config
-              key: propY
+              key: example.property1
   dnsPolicy: ClusterFirst
   restartPolicy: Never
 status: {}
